@@ -51,7 +51,7 @@
 
           <div class="modal_dados">
               <button @click="produto=false" class="modal_fechar">X</button>
-            <span class="modal_preco"> {{produto.preco}}</span>
+            <span class="modal_preco"> {{produto.preco | numeroPreco}}</span>
             <h2 class="modal_titulo">{{produto.nome}}</h2>
             <p>{{produto.descricao}}</p>
           
@@ -73,6 +73,11 @@
 
         </div>
       </section>
+
+
+      <div class="alerta" :class="{ativo:alertaAtivo}">
+        <p class="alerta_mensagem">{{mensagemAlerta}}</p>
+      </div>
 
     </div>
   </body>
